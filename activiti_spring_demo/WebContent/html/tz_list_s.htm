@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跳转菜单</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent">
+        <h3 class="bt"> <span class="tt"><b>通知管理</b></span>
+          <!--搜索-->
+          <div class="search"> 查询指定职员：
+            <input name="" type="text" value="" size="20" />
+            <input type="button" onclick="pyear.value=_pyear.value;pmonth.value=_pmonth.value;submit();" value="查询" class="searchBtn">
+          </div>
+          <!--搜索结束-->
+        </h3>
+        <!--功能按钮-->
+        <div class="btnBox">
+          <div class="tou">
+            <div class="bt2">已收通知</div>
+            <div class="cz_btn">
+              <input type="button" class="ButtonCss" value="发布通知" onclick="window.location.href='shift.aspx?page=shift_insert'">
+            </div>
+          </div>
+        </div>
+        <!--功能按钮结束-->
+        <div class="content">
+          <!--表格-->
+          <table border="0" cellpadding="0" cellspacing="0"  class="tableBD">
+            <tbody>
+              <tr class="btTR">
+                <td width="4%" align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td width="8%" align="center" valign="middle"><img src="images/priority.gif" /></td>
+                <td width="66%"><div class="biaoti">标题</div></td>
+                <td width="12%"><div class="biaoti">发布人</div></td>
+                <td width="10%"><div class="biaoti">状态</div></td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td align="center"><span class="red">紧急</span></td>
+                <td><a href="tz_show.htm">优迈信通</a></td>
+                <td>行政部</td>
+                <td>已阅读</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center"><span class="red">紧急</span></td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td><div class="orange">未阅读</div></td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center"><span class="red">紧急</span></td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td>已阅读</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center"><span class="red">紧急</span></td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td>已阅读</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center">普通</td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td>已阅读</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center">普通</td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td><div class="orange">未阅读</div></td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center">普通</td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td><div class="orange">未阅读</div></td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td>已阅读</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                <td align="center">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>行政部</td>
+                <td>已阅读</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--表格结束-->
+        </div>
+        <!--分页-->
+        <div class="pagination">
+          <div id="ContentPlaceHolder_Contents_pager"> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" class="btn"><img src="images/btn_home.gif" align="absmiddle"/>首 页</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" class="btn"><img src="images/btn_prive.gif" align="absmiddle"/>上一页</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" >1</a> <span class="currentpage">2</span> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" >3</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" class="btn">下一页<img src="images/btn_next.gif" align="absmiddle"/></a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" class="btn">尾 页<img src="images/btn_end.gif" align="absmiddle"/></a> </div>
+        </div>
+        <!--分页结束-->
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent">
+        <h3 class="bt"> <span class="tt"><b>新闻管理</b></span>
+          <!--搜索-->
+          <div class="search"><a href="#"><< 返回</a> </div>
+          <!--搜索结束-->
+        </h3>
+        <div class="nk">
+          <!--表格-->
+          <table align="center" cellspacing="0" cellpadding="0" border="0" class="table_4">
+            <tbody>
+              <tr>
+                <th align="right"> 排班班次： </th>
+                <td><label>
+                    <select onchange="ShowTimTab(this.value)" id="ContentPlaceHolder_Contents_Select1" name="ctl00$ContentPlaceHolder_Contents$Select1" class="valid">
+                      <option value="0" selected="selected">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </label></td>
+              </tr>
+              <tr>
+                <th align="right" width="17%"> 值班人员： </th>
+                <td width="83%"><input type="hidden" id="ContentPlaceHolder_Contents_hib" name="ctl00$ContentPlaceHolder_Contents$hib">
+                  <input type="hidden" id="ContentPlaceHolder_Contents_hdUser" name="ctl00$ContentPlaceHolder_Contents$hdUser">
+                  <textarea rows="2" cols="20" onclick="openSearchWindow();" style="color: Red;
+                                                height: 40px; width: 500px;" id="ContentPlaceHolder_Contents_txtUser" name="ctl00$ContentPlaceHolder_Contents$txtUser"></textarea></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center">
+                  <input type="checkbox" name="checkbox" id="checkbox" class="button1" />
+               <span class="tz"> 星期一</span>
+                <input type="checkbox" name="checkbox2" id="checkbox2" class="button1" />
+                <span class="tz"> 星期二</span>
+                <input type="checkbox" name="checkbox3" id="checkbox3" class="button1" />
+                <span class="tz"> 星期三</span>
+                <input type="checkbox" name="checkbox4" id="checkbox4" class="button1" />
+                <span class="tz"> 星期四</span>
+                <input type="checkbox" name="checkbox5" id="checkbox5" class="button1" />
+                <span class="tz"> 星期五</span>
+                <input type="checkbox" name="checkbox6" id="checkbox6" class="button1" />
+                <span class="tz"> 星期六</span>
+                <input type="checkbox" name="checkbox7" id="checkbox7" class="button1" />
+                <span class="tz"> 星期日</span></td>
+              </tr>
+            </tbody>
+            <tbody id="mytb">
+              <tr>
+                <td colspan="2" align="center"><table align="center" cellspacing="0" cellpadding="0" border="0" class="table_4" >
+                    <tbody id="mytb2">
+                      <tr>
+                        <th align="center">上班时间</th>
+                        <th align="center">下班时间</th>
+                      </tr>
+                      <tr>
+                        <td align="center">上班时间
+                        <input type="text" name="txtam2" id="txtam" size="25" onfocus="WdatePicker({startDate:'%H:%m',dateFmt:'HH:mm',alwaysUseStartDate:true})" /></td>
+                        <td align="center"> 
+                          下班时间
+                          <input type="text" name="txtpm2" id="txtpm" size="25" onfocus="WdatePicker({startDate:'%H:%m',dateFmt:'HH:mm',alwaysUseStartDate:true})" validate="{required:true,messages:{required:" 请输入日程开始时间="请输入日程开始时间"></td>
+                      </tr>
+                      <tr>
+                        <td align="center">最早上班
+                        <input type="text" name="txtMinam2" id="txtMinam" size="25" onfocus="WdatePicker({startDate:'%H:%m',dateFmt:'HH:mm',alwaysUseStartDate:true})" /></td>
+                        <td align="center"> 最迟下班
+                          <input type="text" name="txtMaxam2" id="txtMaxam" size="25" onfocus="WdatePicker({startDate:'%H:%m',dateFmt:'HH:mm',alwaysUseStartDate:true})" validate="{required:true,messages:{required:" 请输入日程开始时间="请输入日程开始时间"></td>
+                      </tr>
+                      <tr>
+                        <td align="center">最迟上班
+                          <input type="text" name="txtMinpm2" id="txtMinpm" size="25" onfocus="WdatePicker({startDate:'%H:%m',dateFmt:'HH:mm',alwaysUseStartDate:true})" validate="{required:true,messages:{required:" 请输入日程开始时间="请输入日程开始时间" /></td>
+                        <td align="center"> 最迟下班
+                          <input type="text" name="txtMaxpm2" id="txtMaxpm" size="25" onfocus="WdatePicker({startDate:'%H:%m',dateFmt:'HH:mm',alwaysUseStartDate:true})" validate="{required:true,messages:{required:" 请输入日程开始时间="请输入日程开始时间"></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+            </tbody>
+          </table>
+          <!--表格结束-->
+          <!--提交按钮-->
+          <div class="submit_btn">
+            <input type="submit" name="button" id="button" value="发布" class="btn">
+            <input type="submit" name="button" id="button" value="关闭" class="btn">
+          </div>
+          <!--提交按钮结束-->
+        </div>
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>

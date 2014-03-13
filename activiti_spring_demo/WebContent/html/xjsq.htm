@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent rightContent_2">
+        <!--操作按钮-->
+        <div class="toolsBtn">
+        <input name="" type="button" value="保存" class="a1"/>
+        <input name="" type="button" value="提交" class="a2"/>
+        <input name="" type="button" value="审批" class="a3"/>
+        <input name="" type="button" value="退回" class="a4"/>
+        <input name="" type="button" value="流程查看" class="a5"/>
+        <input name="" type="button" value="打印" class="a6"/>
+        <input name="" type="button" value="返回" class="a7"/>
+        </div>
+        <!--操作按钮结束-->
+        <h4 class="orderName">休假申请</h4>
+        <div class="nk">
+          <!--休假申请表格-->
+          <table cellspacing="1" cellpadding="0" border="0" align="center" class="formitem2">
+            <tbody>
+              <tr>
+                <th>申请人：</th>
+                <td width="35%" align="left" ><div class="con">姚伟雄</div></td>
+                <th>所在部门：</th>
+                <td width="35%" align="left" ><div class="con">业务支持中心.规划建设室</div></td>
+              </tr>
+              <tr>
+                <th>申请日期：</th>
+                <td width="35%" align="left" ><div class="con"><input type="hidden" value="2011-09-05" name="apply_date">
+                  2011-09-05</div></td>
+                <th>联系电话：</th>
+                <td width="35%" align="left" ><div class="con"><input type="hidden" value="13828380855" name="apply_mobile">
+                  13828380855</div></td>
+              </tr>
+              <tr>
+                <th>主题：</th>
+                <td align="left"  colspan="3"><div class="con"><input type="text" value="姚伟雄的休假申请(2011-09-05)" name="Title" class="textInput2">
+                 </div> </td>
+              </tr>
+              <tr>
+                <th>流程单号：</th>
+                <td width="35%" align="left" colspan="3" ><input type="hidden" value="XIUJSQ-20110905-001" name="apply_sn">
+                  XIUJSQ-20110905-001&nbsp; </td>
+              </tr>
+              <tr>
+                <th>休假类型：</th>
+                <td width="35%" align="left" ><div class="con"><select onchange="ChangeVacationType(this.options[this.options.selectedIndex].value);ByTimeUnit();dayshow();" name="VacationType" id="VacationType">
+                    <option value="">-请选择休假类型-</option>
+                    <option value="公假">公假</option>
+                    <option value="事假">事假</option>
+                    <option value="病假">病假</option>
+                    <option value="年休假">年休假</option>
+                    <option value="产假">产假</option>
+                    <option value="看护假">看护假</option>
+                    <option value="婚假">婚假</option>
+                    <option value="丧假">丧假</option>
+                    <option value="计划生育假">计划生育假</option>
+                    <option value="工伤假">工伤假</option>
+                    <option value="补休">补休</option>
+                    <option value="探亲假">探亲假</option>
+                  </select></div></td>
+                <th>休假开始时间：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" readonly="" onfocus="WdatePicker({skin:'whyGreen',startDate:'%y-%M-%D 08:00:00',dateFmt:'yyyy-MM-dd HH:mm',alwaysUseStartDate:true})" size="20" class="textInput" value="" id="StartTime" name="StartTime"></div></td>
+              </tr>
+              <tr>
+                <th>休假结束时间：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" readonly="" onfocus="WdatePicker({skin:'whyGreen',startDate:'%y-%M-%D 23:59:59',dateFmt:'yyyy-MM-dd HH:mm',alwaysUseStartDate:true})" size="20" class="textInput" value="" id="EndTime" name="EndTime"></div></td>
+                <th>休假天数：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" style="width:60px" value="" name="PeriodTime" id="PeriodTime" class="textInput">
+                  <span id="dayunit"></span> <font color="#ff0000"><span style="display:none" id="dayshow">你可休年休假天数：5.0天</span></font> <font color="#ff0000"><span style="display:none" id="spantime"></span></font></div></td>
+              </tr>
+              <tr style="display:none" id="trbuban">
+                <th>加班时间：</th>
+                <td align="left"  colspan="3"><div class="con"><input type="text" readonly="" style="width:280px" id="txtaddtime" name="txtaddtime" class="textInput">
+                  <span onclick="getequipclass()" style="cursor:hand"><img border="0/" src="../skin/images/chose.gif"></span></div></td>
+              </tr>
+              <tr>
+                <th>休假事由：</th>
+                <td align="left"  colspan="3"><div class="con"><textarea onpropertychange="textCount(this,500);" style="overflow:auto;width:99%;height:52px;" name="Reason"></textarea></div></td>
+              </tr>
+              <tr style="display:none" id="lblVacationClass">
+                <th>公假类型：</th>
+                <td width="35%" align="left" ><div class="con"><select onchange="ChangeVacationClass(this.options[this.options.selectedIndex].value);" name="VacationClass" id="VacationClass">
+                    <option value="">-请选择公假类型-</option>
+                    <option value="开会">开会</option>
+                    <option value="培训">培训</option>
+                    <option value="内部讲师授课">内部讲师授课</option>
+                    <option value="其他">其他</option>
+                  </select></div></td>
+                <th>外出地点：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" style="width:300px" value="" name="OutAddress" id="OutAddress"></div></td>
+              </tr>
+              <!-----------------------------开会-------------------------------------------->
+              <tr style="display:none" id="lbl1">
+                <th>会议名称：</th>
+                <td width="35%" align="left" colspan="3" ><div class="con"><input type="text" value="" name="MeetingName" id="MeetingName"></div></td>
+              </tr>
+              <!-----------------------------培训-------------------------------------------->
+              <tr style="display:none" id="lbl2">
+                <th>课程名称：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" value="" name="CoursesName" id="CoursesName"></div></td>
+                <th>课程类别：</th>
+                <td width="35%" align="left" ><div class="con"><select name="CoursesType" id="CoursesType">
+                    <option value="">-请选择课程类别-</option>
+                    <option value="市场类">市场类</option>
+                    <option value="综合类">综合类</option>
+                    <option value="技术类">技术类</option>
+                    <option value="管理类">管理类</option>
+                  </select></div></td>
+              </tr>
+              <tr style="display:none" id="lbl8">
+                <th>主办单位：</th>
+                <td width="35%" align="left" colspan="3" ><div class="con"><select name="ProvinceCity" id="ProvinceCity">
+                    <option value="">-请选择主办单位-</option>
+                    <option value="省办">省办</option>
+                    <option value="市自办">市自办</option>
+                  </select></div></td>
+              </tr>
+              <!-----------------------------内部援课-------------------------------------------->
+              <tr style="display:none" id="lbl3">
+                <th>授课课程名称：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" value="" name="TeachingPlan" id="TeachingPlan"></div></td>
+                <th>讲师级别：</th>
+                <td width="35%" align="left" ><div class="con"><select name="TeacherType" id="TeacherType">
+                    <option value="">-请选择讲师级别-</option>
+                    <option value="初级讲师">初级讲师</option>
+                    <option value="中级讲师">中级讲师</option>
+                    <option value="高级讲师">高级讲师</option>
+                    <option value="非聘任讲师">非聘任讲师</option>
+                  </select></div></td>
+              </tr>
+              <!-----------------------------其他-------------------------------------------->
+              <tr style="display:none" id="lbl4">
+                <th>事件名称：</th>
+                <td width="35%" align="left" colspan="3" ><div class="con"><input type="text" value="" name="OtherName" id="OtherName"></div></td>
+              </tr>
+              <!-------------------公假共用开始时间，结束时间，天数，备注----------------------->
+              <tr style="display:none" id="lbl5">
+                <th>实际开始时间：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" readonly="" onfocus="WdatePicker({skin:'whyGreen',startDate:'%y-%M-%D 08:00:00',dateFmt:'yyyy-MM-dd HH:mm',alwaysUseStartDate:true})" size="20" class="Wdate" value="" name="TStartTime" id="TStartTime"></div></td>
+                <th>实际结束时间：</th>
+                <td width="35%" align="left" ><div class="con"><input type="text" readonly="" onfocus="WdatePicker({skin:'whyGreen',startDate:'%y-%M-%D 23:59:59',dateFmt:'yyyy-MM-dd HH:mm',alwaysUseStartDate:true})" size="20" class="Wdate" value="" name="TEndTime" id="TEndTime"></div></td>
+              </tr>
+              <tr style="display:none" id="lbl6">
+                <th>天数：</th>
+                <td width="35%" align="left" colspan="3" ><div class="con"><input type="text" value="" name="TPeriodTime" id="TPeriodTime"></div></td>
+              </tr>
+              <tr style="display:none" id="lbl7">
+                <th>备注：</th>
+                <td align="left"  colspan="3"><div class="con"><textarea onpropertychange="textCount(this,500);" style="overflow:auto;width:99%;height:52px;" name="VMemo"></textarea></div></td>
+              </tr>
+              <tr>
+                <th>申请证明：</th>
+                <td colspan="3"><div class="con"><select multiple="" size="4" style="width:374px" name="attach">
+                  </select>
+                  <input type="button" style="vertical-align:buttom" class="ButtonCss" value="删除" onclick="javascript:delete_list_item(attach,false);save_list_item(attach,add_attname,add_attfile);">
+                  <br>
+                  <select multiple="" name="add_attfile" style="display:none">
+                  </select>
+                  <select multiple="" name="add_attname" style="display:none">
+                  </select>
+                 </div></td>
+              </tr>
+            </tbody>
+          </table>
+          <!--休假申请表格结束-->
+        </div>
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跳转菜单</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent">
+        <h3 class="bt"> <span class="tt"><b>邮 件</b></span>
+          <!--搜索-->
+          <div class="search"> 查询指定职员：
+            <input name="" type="text" value="" size="20" />
+            <input type="button" onclick="pyear.value=_pyear.value;pmonth.value=_pmonth.value;submit();" value="查询" class="searchBtn">
+          </div>
+          <!--搜索结束-->
+        </h3>
+         <!--功能按钮-->
+        <div class="btnBox">
+          <div class="tou">
+            <div class="bt2">电子邮件</div>
+            <div class="cz_btn">
+              <input type="button" class="ButtonCss" value="删除" onclick="window.location.href='gz_add.htm'">
+              <input type="button" class="ButtonCss" value="销毁" onclick="window.location.href='#'">
+              <input type="button" class="ButtonCss" value="转发" onclick="window.location.href='#'">
+            </div>
+          </div>
+        </div>
+        <!--功能按钮结束-->
+        <div class="content">
+          <!--表格-->
+          <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tbody>
+              <tr>
+                <td id="Left"><div id="Toolbar"> <a title="点击查看新邮件" target="mail_main" href="#" > <img alt="未读" src="images/noread.gif" id="img_new_count">
+                   </a><a target="mail_main" href="#"> <img alt="写信" src="images/writeMail.gif"></a> </div>
+                  <div class="mailNav">
+                    <ul id="menu_left_ucsmy" class="leftNav">
+                      <li>
+                        <label class="yj"><a href="javascript:;">邮件箱</a></label>
+                        <ul class="two">
+                          <li class="first"> <a href="dagl.htm" target="showframe" class="NOMe"><span>收件箱</span></a> </li>
+                          <li > <a href="dagl.htm" target="showframe" class="NOMe"><span>草稿箱</span></a> </li>
+                          <li > <a href="dagl.htm" target="showframe" class="NOMe"><span>已发送</span></a> </li>
+                          <li class="end"> <a href="dagl.htm" target="showframe" class="NOMe"><span>查询邮件</span></a> </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <label class="yj"><a href="javascript:;">邮件箱管理</a></label>
+                        <ul class="two">
+                          <li class="first end"> <a href="pxjl.htm" target="showframe" class="NOMe"><span>培训记录</span></a> </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <label class="yj"><a href="javascript:;">其它邮件</a></label>
+                        <ul class="two">
+                          <li class="first end"> <a href="jcxx.htm" target="showframe" class="NOMe"><span>奖惩信息列表</span></a> </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <label class="yj"><a href="javascript:;">职位变更</a></label>
+                        <ul class="two">
+                          <li class="first end"> <a href="zwbg.htm" target="showframe" class="NOMe"><span>职务变更历史记录</span></a> </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <label class="yj"><a href="javascript:;">人事合同</a></label>
+                        <ul class="two">
+                          <li class="first end"> <a href="qyzy.htm" target="showframe" class="NOMe"><span>签约职员</span></a> </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <label class="yj"><a href="javascript:;">类别维护</a></label>
+                        <ul class="two">
+                          <li class="first end"> <a href="#" target="showframe" class="NOMe"><span>类别维护</span></a> </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <script type="text/javascript" language="javascript" >
+ function addEvent(el,name,fn){//绑定事件
+  if(el.addEventListener) return el.addEventListener(name,fn,false);
+  return el.attachEvent('on'+name,fn);
+ }
+ function nextnode(node){//寻找下一个兄弟并剔除空的文本节点
+  if(!node)return ;
+  if(node.nodeType == 1)
+   return node;
+  if(node.nextSibling)
+   return nextnode(node.nextSibling);
+ }
+ function prevnode(node){//寻找上一个兄弟并剔除空的文本节点
+  if(!node)return ;
+  if(node.nodeType == 1)
+   return node;
+  if(node.previousSibling)
+   return prevnode(node.previousSibling);
+ }
+ function parcheck(self,checked){//递归寻找父亲元素，并找到input元素进行操作
+  var par =  prevnode(self.parentNode.parentNode.parentNode.previousSibling),parspar;
+  if(par&&par.getElementsByTagName('input')[0]){
+   par.getElementsByTagName('input')[0].checked = checked;
+   parcheck(par.getElementsByTagName('input')[0],sibcheck(par.getElementsByTagName('input')[0]));
+  }
+ }
+ function sibcheck(self){//判断兄弟节点是否已经全部选中
+  var sbi = self.parentNode.parentNode.parentNode.childNodes,n=0;
+  for(var i=0;i<sbi.length;i++){
+   if(sbi[i].nodeType != 1)//由于孩子结点中包括空的文本节点，所以这里累计长度的时候也要算上去
+    n++;
+   else if(sbi[i].getElementsByTagName('input')[0].checked)
+    n++;
+  }
+  return n==sbi.length?true:false;
+ }
+ addEvent(document.getElementById('menu_left_ucsmy'),'click',function(e){//绑定input点击事件，使用menu_left_ucsmy根元素代理
+  e = e||window.event;
+  var target = e.target||e.srcElement;
+  var tp = nextnode(target.parentNode.nextSibling);
+  switch(target.nodeName){
+   case 'A'://点击A标签展开和收缩树形目录，并改变其样式会选中checkbox
+    if(tp&&tp.nodeName == 'UL'){
+     if(tp.style.display != 'block' ){
+      tp.style.display = 'block';
+      prevnode(target.parentNode.previousSibling).className = 'ren'
+     }else{
+      tp.style.display = 'none';
+      prevnode(target.parentNode.previousSibling).className = 'add'
+     }
+    }
+    break;
+   case 'SPAN'://点击图标只展开或者收缩
+    var ap = nextnode(nextnode(target.nextSibling).nextSibling);
+    if(ap.style.display != 'block' ){
+     ap.style.display = 'block';
+     target.className = 'ren'
+    }else{
+     ap.style.display = 'none';
+     target.className = 'add'
+    }
+    break;
+   case 'INPUT'://点击checkbox，父亲元素选中，则孩子节点中的checkbox也同时选中，孩子结点取消父元素随之取消
+    if(target.checked){
+     if(tp){
+      var checkbox = tp.getElementsByTagName('input');
+      for(var i=0;i<checkbox.length;i++)
+       checkbox[i].checked = true;
+     }
+    }else{
+     if(tp){
+      var checkbox = tp.getElementsByTagName('input');
+      for(var i=0;i<checkbox.length;i++)
+       checkbox[i].checked = false;
+     }
+    }
+    parcheck(target,sibcheck(target));//当孩子结点取消选中的时候调用该方法递归其父节点的checkbox逐一取消选中
+    break;
+  }
+ });
+ window.onload = function(){//页面加载时给有孩子结点的元素动态添加图标
+  var labels = document.getElementById('menu_left_ucsmy').getElementsByTagName('label');
+  for(var i=0;i<labels.length;i++){
+   var span = document.createElement('span');
+   span.style.cssText ='display:inline-block;vertical-align:middle;cursor:pointer;';
+   span.innerHTML = ' '
+   span.className = 'add';
+   if(nextnode(labels[i].nextSibling)&&nextnode(labels[i].nextSibling).nodeName == 'UL')
+    {
+		labels[i].parentNode.insertBefore(span,labels[i]);
+		}
+   else
+   {
+    labels[i].className = 'rem'
+  	}
+  }
+ }
+</script>
+                  </div></td>
+                <td id="Center" class="scroll-left"></td>
+                <td id="Center_2"><!--邮件列表-->
+                  <table border="0" cellpadding="0" cellspacing="0"  class="table_mail">
+                    <tbody>
+                      <tr class="btTR">
+                        <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                        <td><div class="biaoti">名称</div></td>
+                        <td><div class="biaoti">文件大小</div></td>
+                        <td><div class="biaoti">发件人</div></td>
+                        <td><div class="biaoti"><u>主题</u></div></td>
+                        <td><div class="biaoti"><u>日期</u></div></td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr class="item-visited">
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>1.5MB</td>
+                        <td>18</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>100KB</td>
+                        <td>18</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>5.3MB</td>
+                        <td>18</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                      <tr>
+                        <td align="center"><input name="input3" type="checkbox" value="" /></td>
+                        <td>&nbsp;</td>
+                        <td>80KB</td>
+                        <td>18</td>
+                        <td>2011-10-25[管理员]</td>
+                        <td>5月2日</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!--邮件列表结束-->
+                   <!--分页-->
+        <div class="pagination">
+          <div id="ContentPlaceHolder_Contents_pager"> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" class="btn"><img src="images/btn_home.gif" align="absmiddle"/>首 页</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" class="btn"><img src="images/btn_prive.gif" align="absmiddle"/>上一页</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" >1</a> <span class="currentpage">2</span> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" >3</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" class="btn">下一页<img src="images/btn_next.gif" align="absmiddle"/></a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" class="btn">尾 页<img src="images/btn_end.gif" align="absmiddle"/></a> </div>
+        </div>
+        <!--分页结束-->
+                  </td>
+                <td id="Right">
+                <!--邮件内容-->
+                <!--上边的按钮-->
+    <div class="topBtn">
+      <a class="email_toolbar_action" onclick="window.open(getNewMailLocation(2))" href="#" id="btn_reply_all" style="display: inline-block;">全部回复</a>
+       <a onclick="window.open(getNewMailLocation(3))" href="#">转发</a>
+	  <a class="email_toolbar_action" href="javascript:;" id="btn_del">删除</a>
+	  <a class="email_toolbar_action" href="javascript:;" id="btn_prev">上一封</a>
+      <a class="email_toolbar_action" href="javascript:;" id="btn_next">下一封</a>
+    </div>
+    <!--上边按钮结束-->
+                <div class="ShowBox email_list_box">
+                
+    <!--信件内容-->
+    <!--信件标题-->
+    <div class="e_t_box">
+      <div class="e_title">广州站今日推荐 - 【天河区】43元抢购原价85元的川牛牛饮食店超值2-3人套餐【招牌酸菜鱼（约2.3-2.5斤）+...</div>
+      <div class="e_info"><span class="fa">发件人：</span><span class="na"><b class="bb">兴业银行信用卡中心</b><span class="hui">&lt;creditcard@message.cib.com.cn&gt;;</span></span></div>
+      <div class="e_info"><span class="fa">时&nbsp;&nbsp;间：</span><span class="na">2011年07月18日 11:27 (星期一)</span></div>
+       <div class="e_info"><span class="fa">收件人：</span><span class="na">吴炳乐</span><span class="hui">&lt;5153746@qq.com&gt;</span></div>
+    </div>
+    <!--信件标题部分结束-->
+    <!--信件内容-->
+    	<div class="e_content">
+        	<div class="replyRemind"><b class="reply-ico">&nbsp;</b> <span>邮件已被回复</span>&nbsp;<span>[<a href="#">查看详情</a>]</span></div>
+           <div class="neirong">
+             <p>广东优迈信息通信技术有限公司，简称优迈信通，于2009年9月正式注册成立，注册资本为人民币1000万。 其前身为广州网智通信息技术有限公司，于2011年2月增资更名为广东优迈信息通信技术有限公司，是一家作为国内领先的融合信息化服务供应商，提供满足企业信息化需求的应用产品服务和解决方案，为客户创造长期的价值和潜在的增长。 </p>
+            
+             
+           </div>
+        </div>
+    <!--信件内容结束-->
+   
+    
+  </div>
+                <!--邮件内容结束-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!--表格结束-->
+        </div>
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>

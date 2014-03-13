@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="chen">
+  <process id="oss_vacation2" name="oss 请假申请流程" isExecutable="true">
+    <startEvent id="startevent1" name="申请人提交请假申请" activiti:initiator="initiator">
+      <extensionElements>
+        <activiti:formProperty id="num_of_days" name="Number of days" type="long" required="true"></activiti:formProperty>
+        <activiti:formProperty id="from_day" name="From day" type="date" datePattern="yyyy-MM-dd HH:mm" required="true"></activiti:formProperty>
+        <activiti:formProperty id="reason" name="Reason" type="string" required="true"></activiti:formProperty>
+      </extensionElements>
+    </startEvent>
+    <userTask id="usertask1" name="refuse" activiti:assignee="${initiator}">
+      <documentation>你的请假申请因为“${approval_sug}”而被拒绝了。你现在可以处理原因再发起申请或者结束流程。</documentation>
+      <extensionElements>
+        <activiti:formProperty id="num_of_days" name="Number of days" type="long" required="true"></activiti:formProperty>
+        <activiti:formProperty id="from_day" name="From day" type="date" datePattern="yyyy-MM-dd HH:mm" required="true"></activiti:formProperty>
+        <activiti:formProperty id="reason" name="Reason" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="end" name="End" type="enum" required="true">
+          <activiti:value id="true" name="结束流程"></activiti:value>
+          <activiti:value id="false" name="重发申请"></activiti:value>
+        </activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <userTask id="usertask3" name="team leader" activiti:assignee="#{assignmentHandlerService.teamLeaderId(initiator)}" activiti:candidateUsers="${userList}">
+      <documentation>来自${initiator}的请假申请</documentation>
+      <extensionElements>
+        <activiti:formProperty id="approval" name="Approval" type="enum" required="true"></activiti:formProperty>
+        <activiti:formProperty id="approval_sug" name="Approval Suggestion" type="string"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <userTask id="usertask4" name="department leader" activiti:assignee="#{assignmentHandlerService.departmentLeaderId(initiator)}">
+      <documentation>来自${initiator}的请假申请</documentation>
+      <extensionElements>
+        <activiti:formProperty id="approval" name="Approval" type="enum" required="true">
+          <activiti:value id="true" name="Yes"></activiti:value>
+          <activiti:value id="false" name="No"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="approval_sug" name="Approval Suggestion" type="string"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <serviceTask id="mailtask1" name="mail" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to">
+          <activiti:expression>bo.12@qq.com</activiti:expression>
+        </activiti:field>
+        <activiti:field name="subject">
+          <activiti:expression>vacation</activiti:expression>
+        </activiti:field>
+        <activiti:field name="html">
+          <activiti:expression>Dear:  The vacation is approval.</activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask3"></sequenceFlow>
+    <sequenceFlow id="flow4" name="${end == 'false'}" sourceRef="usertask1" targetRef="usertask3">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${end == 'false'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow9" name="${approval == 'true' &amp;&amp; num_of_days &gt;= 3}" sourceRef="usertask3" targetRef="usertask4">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approval == 'true' && num_of_days >= 3}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow11" name="${approval == 'true' &amp;&amp; num_of_days &lt; 3}" sourceRef="usertask3" targetRef="mailtask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approval == 'true' && num_of_days < 3}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow12" name="${approval == 'true'}" sourceRef="usertask4" targetRef="mailtask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approval == 'true'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow13" sourceRef="mailtask1" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow14" name="${approval == 'false'}" sourceRef="usertask3" targetRef="usertask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approval == 'false'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow15" name="${approval == 'false'}" sourceRef="usertask4" targetRef="usertask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approval == 'false'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow16" name="${end == 'true'}" sourceRef="usertask1" targetRef="endevent1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${end == 'true'}]]></conditionExpression>
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_oss_vacation2">
+    <bpmndi:BPMNPlane bpmnElement="oss_vacation2" id="BPMNPlane_oss_vacation2">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="100.0" y="200.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="540.0" y="360.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask3" id="BPMNShape_usertask3">
+        <omgdc:Bounds height="55.0" width="105.0" x="195.0" y="190.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask4" id="BPMNShape_usertask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="540.0" y="190.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="810.0" y="200.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="mailtask1" id="BPMNShape_mailtask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="540.0" y="40.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="135.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="195.0" y="217.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="592.0" y="360.0"></omgdi:waypoint>
+        <omgdi:waypoint x="247.0" y="245.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="78.0" x="10.0" y="0.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="300.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="217.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="56.0" width="100.0" x="-6.0" y="0.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="247.0" y="190.0"></omgdi:waypoint>
+        <omgdi:waypoint x="592.0" y="95.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="56.0" width="100.0" x="-6.0" y="-7.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
+        <omgdi:waypoint x="592.0" y="190.0"></omgdi:waypoint>
+        <omgdi:waypoint x="592.0" y="95.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="97.0" x="-12.0" y="-11.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">
+        <omgdi:waypoint x="592.0" y="95.0"></omgdi:waypoint>
+        <omgdi:waypoint x="827.0" y="200.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow14" id="BPMNEdge_flow14">
+        <omgdi:waypoint x="247.0" y="245.0"></omgdi:waypoint>
+        <omgdi:waypoint x="247.0" y="387.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="387.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="-62.0" y="-57.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow15" id="BPMNEdge_flow15">
+        <omgdi:waypoint x="592.0" y="245.0"></omgdi:waypoint>
+        <omgdi:waypoint x="592.0" y="360.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="8.0" y="-30.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow16" id="BPMNEdge_flow16">
+        <omgdi:waypoint x="592.0" y="360.0"></omgdi:waypoint>
+        <omgdi:waypoint x="827.0" y="235.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="73.0" x="10.0" y="0.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**/
+.header{height:59px;}
+.top{height:132px;background:url(../images/top_bg.gif) 450px 0 no-repeat;position:relative;width:100%;}
+.top .logo{height: 50px;left: 20px;overflow: hidden;position: absolute;top: 25px;}
+.topBotton{position:absolute;right:0;top:15px;width:350px;}
+.pageMenu{background:#F5F5F5 url(../images/bottomLeft_logo.gif) left bottom no-repeat;}
+.pageMenu-2{background:#D9EAFF}
+.topInfo{position:absolute;left:20px;bottom:6px;color:#FFF;}
+.exit{position:absolute;right:28px;top:33px;}
+.exit span{color:#000}
+.exit a{color:#00F;text-decoration:underline;margin:0 5px;}
+.exit a:hover{color:#F00;text-decoration:none;}
+.exit .btn1{width:33px;height:32px;float:left;background:url(../images/genghuan.png) 0 -34px no-repeat;}
+.exit .btn2{width:33px;height:32px;float:left;background:url(../images/power.png) 0 -34px no-repeat;}
+.exit .btn3{width:33px;height:32px;float:left;background:url(../images/book.png) 0 -34px no-repeat;}
+.exit .btn1:hover{background:url(../images/genghuan.png) 0 0 no-repeat;}
+.exit .btn2:hover{background:url(../images/power.png) 0 0 no-repeat;}
+.exit .btn3:hover{background:url(../images/book.png) 0 0 no-repeat;}
+.topLine{height:0;overflow:hidden;}
+/*顶部菜单*/
+.topMenu{position:absolute;width:100%;height:34px;left:0;bottom:0;background:url(../images/top_menu_bg.gif) 0 0 repeat-x;}
+.topMenu ul{position:absolute;left:188px;bottom:0;_bottom:-4px;height:30px;}
+.topMenu ul li{float:left;padding-right:10px;background:url(../images/top_menu_bg_3.gif) right top no-repeat;height:30px;line-height:30px;margin-right:1px;}
+.topMenu .isThis{background:url(../images/top_menu_bg_1.gif) right top no-repeat;margin-bottom:1px}
+.topMenu li a{float:left;height:30px;line-height:35px;background:url(../images/top_menu_bg_4.gif) left top no-repeat;color:#000}
+.topMenu li a span{float:left;height:30px;line-height:35px;padding-left:50px;font-size:13px;font-weight:700;background:url(../images/fh_10.gif) 8px 4px no-repeat;}
+.topMenu .isThis a{background:url(../images/top_menu_bg_2.gif) left top no-repeat;font-weight:700;color:#4a4a4a;}
+.topMenu li a:hover{color:#F00}
+
+/*左侧菜单*/
+.leftSidebar,.navBg{position:absolute;bottom:0;top:0;left:0;overflow:auto;*height:expression(document.body.offsetHeight  + 'px');background:url(../images/left_bg.gif) right top repeat-y;width:190px;*position:inherit;}
+.navBg{background:url(../images/left_bg_2.gif) right bottom no-repeat;}
+.leftNav{overflow:hidden;border-top:1px solid #ABD6FD;background:url(../images/dian.gif) left bottom repeat-x;margin:10px 10px 0 10px;}
+.leftNav li{padding-left:10px;line-height:33px;display:block;background:url(../images/left_button_bg.gif) 0 0 repeat-x;border:solid #ABD6FD;border-width:0 1px;margin-top:-1px;font-weight:700;}
+.leftNav .yj{height:33px;display:inline-block;}
+.leftNav .add{background:url(../images/jj.gif) -4px -28px no-repeat;display:inline-block;height:23px;vertical-align:middle;width:19px;cursor:pointer;}
+.leftNav .ren{background:url(../images/jj.gif) -4px -3px no-repeat;display:inline-block;height:23px;vertical-align:middle;width:19px;cursor:pointer;}
+.leftNav li a{color:#333;padding-left:5px;outline:none;blr:expression(this.onFocus=this.blur());}
+.leftNav li a:hover{color:#F00;}
+.leftNav .two{display:none;padding-bottom:10px;}
+.leftNav .two li{background:none;border:none;display:block;line-height:23px;}
+.leftNav .two li a{height:23px;line-height:23px;border:0px;font-weight:400;display:block;padding-left:15px; cursor:pointer;background:url(../images/jt_1.gif) 2px center no-repeat;}
+.leftNav .two li a:hover{color:#F00;text-decoration:underline}
+.leftNav .two li a span{height:23px;line-height:23px;display:block}
+.leftNav .two .first{padding-top:9px;}
+.leftNav .two .first a span{}
+.leftNav .two .end a span{}
+.leftNav .isMe{background:#f1f1f1;color:#F00}

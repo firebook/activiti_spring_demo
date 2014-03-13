@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+<script src="My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent">
+      <!--操作按钮-->
+        <div class="toolsBtn">
+        	<input name="" type="button" value="保存" class="a1"/>
+        <input name="" type="button" value="提交" class="a2"/>
+        <input name="" type="button" value="审批" class="a3"/>
+        <input name="" type="button" value="退回" class="a4"/>
+        <input name="" type="button" value="流程查看" class="a5"/>
+        <input name="" type="button" value="打印" class="a6"/>
+        <input name="" type="button" value="返回" class="a7"/>
+        </div>
+        <!--操作按钮结束-->
+        <h4 class="orderName">加班申请</h4>
+        <div class="nk">
+          <!--表格-->
+          <table  cellspacing="1" cellpadding="0" border="0" align="center" class="formitem2">
+            <tbody>
+              <tr>
+                <th width="15%"><div class="title">申请人：</div></th>
+                <td width="38%" align="left" ><div class="con">姚伟雄</div></td>
+                <th width="12%"><div class="title">所在部门：</div></th>
+                <td width="35%" align="left"><div class="con">业务支持中心.规划建设室</div></td>
+              </tr>
+              <tr>
+                <th><div class="title">申请日期：</div></th>
+                <td width="38%" align="left"><input type="hidden" value="2011-09-05" name="apply_date">
+                  2011-09-05&nbsp;</td>
+                <th><div class="title">联系电话：</div></th>
+                <td width="35%" align="left"><input type="hidden" value="13828380855" name="apply_mobile">
+                  <div class="con">13828380855</div></td>
+              </tr>
+              <tr>
+                <th><div class="title">主题：</div></th>
+                <td align="left" colspan="3"><div class="con"><input type="text" value="姚伟雄的加班申请(2011-09-05)" name="Title" class="textInput2">
+                  <input type="hidden" value="加班申请" name="formname1"></div></td>
+              </tr>
+              <tr>
+                <th><div class="title">流程单号：</div></th>
+                <td align="left" colspan="3"><div class="con"><input type="hidden" value="OTSQ-20110905-001" name="apply_sn">
+                  OTSQ-20110905-001</div></td>
+              </tr>
+              <tr>
+                <th><div class="title">职务：</div></th>
+                <td align="left" colspan="3"><div class="con"><input type="hidden" value="信息技术实习主管(室副经理)" name="ApplyPost">
+                  信息技术实习主管(室副经理)</div></td>
+              </tr>
+              <tr>
+                <th><div class="title">直接主管姓名：</div></th>
+                <td height="29" align="left" colspan="3"><div class="con"><select onchange="zgchange()" name="ManageNameSel">
+                    <option id="selname" value="">---请选择---</option>
+                    <option value="蔡文城,业务支持中心副总经理">蔡文城</option>
+                    <option value="刘东,业务支持中心总经理">刘东</option>
+                  </select></div></td>
+              </tr>
+              <tr style="display:none">
+                <th><div class="title">直接主管姓名：</div></th>
+                <td height="29" align="left" colspan="3"><div class="con"><input type="text" value="" readonly="" maxlength="100" size="25" name="ManageName" class="textInput"></div></td>
+              </tr>
+              <tr>
+                <th><div class="title">直接主管职务：</div></th>
+                <td height="29" align="left" colspan="3"><div class="con"><input type="text" value="" readonly="" maxlength="100" size="25" name="ManagePost" class="textInput"></div></td>
+              </tr>
+              <tr>
+                <th><div class="title">加班地点：</div></th>
+                <td height="29"><div class="con"><input type="text" value="" maxlength="100" size="25" id="address" name="address" class="textInput"></div></td>
+                <th><div class="title">加班类型：</div></th>
+                <td height="29"><div class="con"><select name="OvertimeType" id="OvertimeType">
+                    <option value="">-请选择加班类型-</option>
+                    <option value="办公事务">办公事务</option>
+                    <option value="割接">割接</option>
+                    <option value="行政">行政</option>
+                    <option value="通信抢修">通信抢修</option>
+                    <option value="其他">其他</option>
+                  </select></div></td>
+              </tr>
+              <tr>
+                <th><div class="title">加班开始时间：</div></th>
+                <td height="29"><div class="con"><input type="text" class="textInput" readonly="" onfocus="WdatePicker()" size="25" class="Wdate" value="" name="StartTime" id="StartTime" ></div></td>
+                <th><div class="title">加班时长：</div></th>
+                <td height="29"><div class="con"><input type="text" style="width:60px" value="" name="PeriodTime" id="PeriodTime" class="textInput">
+                  (*单位：小时) </div></td>
+              </tr>
+              <tr>
+                <th><div class="title">加班原因：</div></th>
+                <td height="29" colspan="3"><div class="con"><textarea onpropertychange="textCount(this,500);" style="overflow:auto;width:99%;height:52px;" name="Reason"></textarea></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <!--表格结束-->
+        </div>
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>

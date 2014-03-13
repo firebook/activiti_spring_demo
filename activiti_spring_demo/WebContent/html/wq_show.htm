@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跳转菜单</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent">
+        <h3 class="bt"> <span class="tt"><b>外勤公告</b></span>
+          <!--搜索-->
+          <!--搜索结束-->
+        </h3>
+        <!--功能按钮-->
+        <div class="btnBox">
+          <div class="tou">
+            <div class="bt2">我的外勤</div>
+            <div class="cz_btn">
+              <input type="button" class="ButtonCss" value="返回" onclick="window.location.href='shift.aspx?page=shift_insert'">
+            </div>
+          </div>
+        </div>
+        <!--功能按钮结束-->
+        <div class="content">
+          <!--表格-->
+          <div class="wj_search_box">
+          <h3 class="wj_search">外勤详细</h3>
+          <div class="LM">
+          <table border="0" align="center" cellpadding="0" cellspacing="0"  class="table_4">
+            <tbody>
+              <tr>
+                <th align="right">外勤时间：</th>
+                <td>开始时间
+                  <label>
+                    <input name="textfield3" type="text" class="input_4" id="textfield3" value="13:00" size="15" />
+                  </label>
+                  <img src="images/time_icon.gif" align="absmiddle" /> &nbsp;	结束时间
+                  <input name="textfield4" type="text" class="input_4" id="textfield4" value="15:20" size="15" />
+                  <img src="images/time_icon.gif" align="absmiddle" /></td>
+              </tr>
+              <tr>
+                <th align="right">外勤主题：</th>
+                <td><input name="textfield" type="text" class="input_2" id="textfield" value="我去8楼办事" size="40" /></td>
+              </tr>
+              <tr>
+                <th width="24%" align="right">外勤内容：</th>
+                <td width="76%">
+                
+                  <label>
+                    <textarea name="textarea" id="textarea" cols="45" rows="5">我去8楼办事!!我去8楼办事!!</textarea>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <th align="right">备注：</th>
+                <td>
+                  <textarea name="textarea2" id="textarea2" cols="45" rows="5">有事请留言</textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          </div>
+          <!--表格结束-->
+          <div class="submit_btn">
+               <input type="submit" class="btn" value="保存" id="button" name="button">
+               <input type="submit" class="btn" value="删除" id="button" name="button">
+               <input type="submit" class="btn" value="返回" id="button" name="button">
+          </div>
+        </div>
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body >
+<table border="0" align="center" cellpadding="0" cellspacing="1"  class="formitem2">
+  <tbody>
+    <tr>
+      <th width="49%" align="center">
+      <div class="jz">申领理由</div>
+      <textarea cols="22" rows="8" id="memo" name="memo" class="kuang" style="width:99%;height:150px">请处理。</textarea>
+      <div class="jz"><select onchange="javascript:memo.value=select_opinion_approve.value;" id="select_opinion_approve" name="select_opinion_approve">
+          <option value="">--常用申领理由--</option>
+          <option value="同意。">同意。</option>
+          <option value="请尽快处理。">请尽快处理。</option>
+        </select></div>
+      </th>
+      <th width="49%" valign="top">
+      <div class="jz">下一步骤:<select id="ddlNextStep" name="ddlNextStep">
+          <option value="58687f6fc9ce40f28bff0bdc832d25fd" selected="selected">分公司市场部经理审批</option>
+        </select></div>
+      <select style="height:152px;width:100%;" class="kuang" id="wDdlRecipient" name="wDdlRecipient" size="4">
+          <option value="huyuanhang" selected="selected">胡远航</option>
+          <option value="zenghaitao2">曾海涛</option>
+          <option value="zhouhuajie">周华杰</option>
+          <option value="caishi">蔡适</option>
+        </select></th>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"  class="endTd"><div class="zt">状态：</div><div class="tjBtn"><input type="button" class="ButtonCss" value="查询" onclick="pyear.value=_pyear.value;pmonth.value=_pmonth.value;submit();">&nbsp;<input type="button" class="ButtonCss" value="查询" onclick="pyear.value=_pyear.value;pmonth.value=_pmonth.value;submit();"></div></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent">
+        <!--操作按钮-->
+        <div class="toolsBtn">
+          <ul>
+            <li><a href="#" class="a1">保存</a></li>
+            <li><a href="#" class="a2">提交</a></li>
+            <li><a href="#" class="a3">预览</a></li>
+            <li><a href="#" class="a4">打印</a></li>
+            <li><a href="#" class="a5">返回</a></li>
+          </ul>
+        </div>
+        <!--操作按钮结束-->
+        <h4 class="orderName">工作日志填报</h4>
+        <div class="content">
+          <!--休假申请表格-->
+          <table cellspacing="1" cellpadding="0" border="0" align="center" class="formitem2">
+   <tbody><tr>
+      <th>填报人：</th>
+      <td width="35%" align="left" >姚伟雄&nbsp;</td>
+      <th>所在部门：</th>
+      <td width="35%" align="left" >业务支持中心.规划建设室&nbsp;</td>
+   </tr>
+   <tr>
+      <th>填报日期：</th>
+      <td width="35%" align="left" ><input type="hidden" value="2011-09-05" name="apply_date">2011-09-05&nbsp;</td>
+      <th>联系电话：</th>
+      <td width="35%" align="left" ><input type="hidden" value="13828380855" name="apply_mobile">13828380855&nbsp;</td>
+   </tr>
+   <tr>
+      <th>主题：</th>
+      <td align="left"  colspan="3">
+         <input type="hidden" value="姚伟雄的工作日志填报(2011-09-05)" id="apply_title" name="apply_title">姚伟雄的工作日志填报(2011-09-05)&nbsp;
+      </td>
+   </tr>
+    <tr>
+      <th>是否服营经理：</th>
+      <td width="35%" align="left" colspan="3" >
+          <select onchange="CleanTable();ShowLike();" name="IfSPManager">
+            <option value="">-请选择-</option>
+            <option value="是">是</option>
+            <option selected="" value="否">否</option>
+         </select>
+      </td>
+   </tr>
+   <!--  <tr>
+      <th>是否服营经理：</th>
+      <td align="left"  width="35%" colspan='3'>
+          <select name="IfSPManager" onchange="CleanTable();ShowLike();">
+            <option value="">-请选择-</option>
+            <option value="是">是</option>
+            <option value="否">否</option>
+         </select>
+      </td>
+   </tr>-->
+   <tr>
+     <td align="left"  colspan="4">
+        <table cellspacing="0" cellpadding="0" border="0" align="center" class="formitem" id="SelectPresent">
+         <tbody>
+         <tr align="center">
+         <th width="2%" align="center">*</th>
+         <th width="14%" align="center">开始时间</th>
+         <th width="14%" align="center">结束时间</th>
+         <th width="10%" align="center">是否外出</th>
+         <th width="10%" align="center">工作地点</th>
+         <th width="10%" align="center" id="CShow" style="display:none">客户名称</th>
+         <th width="10%" align="center" id="TShow" style="display:none">工作目的</th>
+         <th width="10%" align="center" id="OShow" style="display:none">服务对象</th>
+         <th width="20%" align="center">工作内容</th>
+         <th width="10%" align="center">
+            <input type="button" value="填写日志" maxlength="6" onclick="javascript:BowWriteLog(); return false;" class="ButtonCss" name="SelectAmount">
+         </th>
+           </tr>
+           <tr align="center">
+         <td width="2%" align="center">&nbsp;</td>
+         <td width="14%" align="center">&nbsp;</td>
+         <td width="14%" align="center">&nbsp;</td>
+         <td width="10%" align="center">&nbsp;</td>
+         <td width="10%" align="center">&nbsp;</td>
+         <td width="10%" align="center" id="CShow" style="display:none">&nbsp;</td>
+         <td width="10%" align="center" id="TShow" style="display:none">&nbsp;</td>
+         <td width="10%" align="center" id="OShow" style="display:none">&nbsp;</td>
+         <td width="20%" align="center">&nbsp;</td>
+         <td width="10%" align="center">&nbsp;
+            
+         </td>
+           </tr>
+         </tbody></table>
+     </td>
+   </tr>
+   <tr>
+      <th>备注：</th>
+      <td align="left"  colspan="3">
+         <textarea onpropertychange="textCount(this,500);" style="overflow:auto;width:100%;height:52px;" id="memo" name="memo"></textarea>
+      </td>
+   </tr>
+  
+</tbody></table>
+          <!--休假申请表格结束-->
+        </div>
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>

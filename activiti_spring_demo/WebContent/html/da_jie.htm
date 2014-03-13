@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跳转菜单</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="rightSidebar">
+  <!--主体内容开始-->
+  <div class="pageBody">
+    <div class="inner_2">
+      <!--详细页-->
+      <div class="rightContent">
+        <h3 class="bt"> <span class="tt"><b>档案管理</b></span>
+          <!--搜索-->
+          <div class="search">
+                            标题：
+                            <input type="text" id="txtKeyword" name="txtKeyword">
+                            类型：
+                            <select id="ddlApplyType" name="ddlApplyType">
+	<option value="-1" selected="selected">---全部---</option>
+	<option value="32">加班申请</option>
+	<option value="33">休假申请</option>
+	<option value="34">会议申请</option>
+	<option value="35">借款申请</option>
+	<option value="36">考勤异常申请</option>
+	<option value="37">费用报销申请</option>
+	<option value="49">出差申请</option>
+
+</select>
+                            创建者：
+                            <input type="text" id="txtCreater" name="txtCreater">
+                            状态：
+                            <select id="ddlStatus" name="ddlStatus">
+	<option value="-2" selected="selected">--全部--</option>
+	<option value="-1">--起草--</option>
+	<option value="0">--处理中--</option>
+	<option value="1">--完成--</option>
+
+</select>
+                            <input type="submit" class="ButtonCss" id="btnSearch" value="查询" name="btnSearch">
+          </div>
+          <!--搜索结束-->
+        </h3>
+        <!--功能按钮-->
+        <div class="btnBox">
+          <div class="tou">
+            <div class="bt2">我的借阅&nbsp;&nbsp;
+              <select name="0.11.0.31.7.0" value="4" onchange="sendMsg(this);">
+                <option value="WONoSelectionString">--全部--</option>
+                <option value="1">等待审批</option>
+                <option value="2">已审批</option>
+                <option value="3">已归还</option>
+              </select>
+            </div>
+            <div class="cz_btn">
+              <input type="button" class="ButtonCss" value="删除" onclick="window.location.href=''">
+              <input type="button" class="ButtonCss" value="归还" onclick="window.location.href='#'">
+            </div>
+          </div>
+        </div>
+        <!--功能按钮结束-->
+        <div class="content">
+          <!--表格-->
+          <table border="0" cellpadding="0" cellspacing="0"  class="tableBD">
+            <tbody>
+              <tr class="btTR">
+                <td width="4%" align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td width="18%"><div class="biaoti">档案编号</div></td>
+                <td width="33%"><div class="biaoti">档案名称</div></td>
+                <td width="12%"><div class="biaoti">申请日期</div></td>
+                <td width="10%"><div class="biaoti">审批人</div></td>
+                <td width="12%"><div class="biaoti">审批日期</div></td>
+                <td width="9%"><div class="biaoti">当前状态</div></td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>&nbsp;</td>
+                <td>等待审批</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已审批</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已审批</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已审批</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已审批</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已审批</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已审批</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已归还</td>
+              </tr>
+              <tr>
+                <td align="center"><input name="input2" type="checkbox" value="" /></td>
+                <td><a href="da_show.htm">MSG1011150032VJ03</a></td>
+                <td><a href="da_show.htm">名称</a></td>
+                <td>200-10-27</td>
+                <td>管理员</td>
+                <td>200-10-27</td>
+                <td>已归还</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--表格结束-->
+        </div>
+        <!--分页-->
+        <div class="pagination">
+          <div id="ContentPlaceHolder_Contents_pager"> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" class="btn"><img src="images/btn_home.gif" align="absmiddle"/>首 页</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" class="btn"><img src="images/btn_prive.gif" align="absmiddle"/>上一页</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','1')" >1</a> <span class="currentpage">2</span> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" >3</a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" class="btn">下一页<img src="images/btn_next.gif" align="absmiddle"/></a> <a href="javascript:__doPostBack('ctl00$ContentPlaceHolder_Contents$pager','3')" class="btn">尾 页<img src="images/btn_end.gif" align="absmiddle"/></a> </div>
+        </div>
+        <!--分页结束-->
+      </div>
+      <!--人力资源管理结束-->
+    </div>
+  </div>
+  <!--主体内容结束-->
+</div>
+</body>
+</html>
